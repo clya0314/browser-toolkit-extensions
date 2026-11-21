@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>网页阅读模式</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="brand-mark" aria-hidden="true">阅</div>
+      <div><h1>网页阅读模式</h1><p>按当前环境选择网页配色</p></div>
+      <button id="reset" class="reset" type="button" title="关闭当前网页模式">复原</button>
+    </header>
+    <section class="modes" aria-label="阅读模式">
+      <button class="mode" data-mode="night" type="button">
+        <span class="mode-icon night-icon" aria-hidden="true">◐</span><span class="mode-copy"><strong>夜间模式</strong><small>黑底浅字 · 高对比</small></span><span class="check" aria-hidden="true">✓</span>
+      </button>
+      <button class="mode" data-mode="green" type="button">
+        <span class="mode-icon green-icon" aria-hidden="true">▤</span><span class="mode-copy"><strong>豆绿阅读</strong><small>柔和绿底 · 深色文字</small></span><span class="check" aria-hidden="true">✓</span>
+      </button>
+      <button class="mode" data-mode="outdoor" type="button">
+        <span class="mode-icon outdoor-icon" aria-hidden="true">☼</span><span class="mode-copy"><strong>户外增强</strong><small>浅底深字 · 强化明暗区分</small></span><span class="check" aria-hidden="true">✓</span>
+      </button>
+    </section>
+    <footer><span class="status-dot"></span><span id="status">仅更改网页显示，可随时复原</span></footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

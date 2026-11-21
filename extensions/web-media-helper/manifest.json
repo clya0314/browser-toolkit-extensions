@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "网页媒体下载 · B站 / 小红书 / 通用",
+  "version": "1.2.1",
+  "description": "识别当前网页可访问的视频和音频资源，并下载支持的媒体文件。",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs3J7CMUMGt93QmOSSwdMkQomblq73MIqa6w8JLYWDq87r7CzKKNjYM3mfSoNb8nrP73+vnPCLtyMWxD5wOG8FHJ7HUoo/34jy1un66IYmfSsPTU+rrUHrQ98XuWDfEM02Pn3+DfV0c+xN+rOfl44oOfFoUkzeeJZosjqSJA4tqbPp+WimMFALmK29aLvkbtv42H7s4cORKdlJXeYYuv+gQb7CTNsv2/nrS3/1eOdxSzm6yuZ9rw1D6Bvt1RTzBacN7EXqJH/KisRSG04iEfrW6bBTdicXUv4fN1F0YLPMM2vOM6qyaggQU0z+XDTACOC8k8fO/MrEsziqMNPb2u8aQIDAQAB",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "downloads",
+    "offscreen",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "https://*.bilivideo.com/*",
+    "https://*.bilivideo.cn/*",
+    "https://*.xhscdn.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "网页媒体下载",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "minimum_chrome_version": "116",
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 260px; margin: 0; padding: 16px; font: 14px -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+  .val { font-weight: bold; }
+  input[type=range] { width: 100%; cursor: pointer; margin: 0 0 18px; }
+  label.auto { display: flex; align-items: center; gap: 8px; cursor: pointer; margin-bottom: 6px; }
+  .tip { color: #888; font-size: 12px; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <div class="row"><span>☀ 画面提亮</span><span class="val" id="v1">0</span></div>
+  <input type="range" id="s1" min="0" max="100" value="0">
+
+  <div class="row"><span>🔊 声音放大</span><span class="val" id="v2">0</span></div>
+  <input type="range" id="s2" min="0" max="100" value="0">
+
+  <label class="auto"><input type="checkbox" id="auto"> 自动拉平音量（忽大忽小时打开）</label>
+
+  <div class="tip">滑块往右越强，画面 0 恢复网页原始画面；声音 0 不启用处理。声音增强最高约 +24 dB；自动拉平会压低过响峰值，不会对静音段自动补音量。若声音已接入但听不到，请刷新网页后重试。</div>
+  <script src="popup.js"></script>
+</body>
+</html>
