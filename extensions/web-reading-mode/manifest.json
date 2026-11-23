@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "网页阅读模式",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "夜间、豆绿和户外增强三种网页阅读配色。",
   "permissions": ["storage", "activeTab", "scripting"],
   "host_permissions": ["<all_urls>"],
@@ -9,7 +9,8 @@
     {
       "matches": ["http://*/*", "https://*/*"],
       "js": ["content.js"],
-      "run_at": "document_start"
+      "run_at": "document_start",
+      "all_frames": true
     }
   ],
   "action": {

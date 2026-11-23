@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "视频提亮",
-  "version": "4.3",
+  "version": "4.4",
   "description": "点工具栏图标：给网页视频提亮，并放大、拉平声音",
   "permissions": ["storage"],
   "action": {
