@@ -1,14 +1,37 @@
 {
   "manifest_version": 3,
   "name": "网页阅读模式",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "夜间、豆绿和户外增强三种网页阅读配色。",
-  "permissions": ["storage", "activeTab", "scripting"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["content.js"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "shadow-hook.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_start",
       "all_frames": true
     }
@@ -21,5 +44,6 @@
     "16": "icons/16.png",
     "48": "icons/48.png",
     "128": "icons/128.png"
-  }
+  },
+  "minimum_chrome_version": "111"
 }
