@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "网页阅读模式",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "夜间、豆绿和户外增强三种网页阅读配色。",
   "permissions": [
     "storage",

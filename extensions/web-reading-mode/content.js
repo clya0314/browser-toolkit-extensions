@@ -105,6 +105,8 @@
   }
 
   // 夜间模式：文字所处背景（替换后）是否为深色。同一批次内缓存结果
+  // 只在明确遇到“未被替换的亮色实底”（如亮黄/亮粉按钮）时保留原字色，
+  // 不因小图标/雪碧图等 background-image 跳过，避免论坛等站点出现黑底黑字。
   let darkCache = new Map();
   function isDarkBehind(node) {
     const path = [];
@@ -116,7 +118,6 @@
       const cs = getComputedStyle(n);
       const c = parseColor(cs.backgroundColor);
       if (c && c.a >= 0.5) { result = luminance(c) < 0.55; break; }
-      if (/url\(/.test(cs.backgroundImage || '')) { result = false; break; }
     }
     for (const n of path) darkCache.set(n, result);
     return result;
@@ -154,7 +155,7 @@
     const sat = Math.max(fg.r, fg.g, fg.b) - Math.min(fg.r, fg.g, fg.b);
     const kind = sat < 60 ? 'gray' : 'dark';
     if (mode === 'night') {
-      if (lum < 0.6 && (tier || isDarkBehind(el))) el.setAttribute(fgAttr, kind);
+      if (lum < 0.62 && (tier || isDarkBehind(el))) el.setAttribute(fgAttr, kind);
     } else if (mode === 'outdoor') {
       if (lum < 0.72 && (tier || onLightBackground(el))) el.setAttribute(fgAttr, kind);
     }
